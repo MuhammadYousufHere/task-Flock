@@ -1,35 +1,38 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { Auth0Provider } from "@auth0/auth0-react";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { BrowserRouter as Router } from "react-router-dom";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import { Auth0Provider } from '@auth0/auth0-react';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 const theme = createTheme({
   palette: {
     primary: {
-      main: "#625df6",
-      text: "#b785fc",
+      main: '#625df6',
+      text: '#b785fc',
     },
     secondary: {
-      main: "#361870",
-      linkText: "#528cb5",
-      btnText: "#af86fc",
-      btnBg: "#36186e",
+      main: '#361870',
+      linkText: '#528cb5',
+      btnText: '#af86fc',
+      btnBg: '#36186e',
     },
   },
 });
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
       <Auth0Provider
-        domain="myauth-app.us.auth0.com"
-        clientId="Z7JhV58WgZvpNMo77WFuUa1LKR0iMVIo"
-        redirectUri={window.location.origin + "/connect"}
+        domain='myauth-app.us.auth0.com'
+        clientId='Z7JhV58WgZvpNMo77WFuUa1LKR0iMVIo'
+        redirectUri={
+          'https://master--dreamy-tarsier-f1d596.netlify.app//connect'
+        }
+        // redirectUri={window.location.origin + "/connect"}
       >
         <Router>
           <App />
