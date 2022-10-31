@@ -30,7 +30,7 @@ root.render(
         domain='myauth-app.us.auth0.com'
         clientId='Z7JhV58WgZvpNMo77WFuUa1LKR0iMVIo'
         redirectUri={
-          'https://master--dreamy-tarsier-f1d596.netlify.app//connect'
+          'https://master--dreamy-tarsier-f1d596.netlify.app/connect'
         }
         // redirectUri={window.location.origin + "/connect"}
       >
