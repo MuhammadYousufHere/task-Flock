@@ -1,26 +1,26 @@
 import { useEffect, useState } from "react";
 
 import {
-  Box,
-  Typography,
-  CssBaseline,
+  // Box,
+  // Typography,
+  // CssBaseline,
   Container,
-  Link,
-  Grid,
-  Avatar,
+  // Link,
+  // Grid,
+  // Avatar,
 } from "@mui/material";
 import { useAuth0 } from "@auth0/auth0-react";
 
 import { styles } from "./SiginStyle";
-import UiInput from "../../components/Input";
-import UiButton from "../../components/Button";
-import Form from "../../components/Form";
-import Option from "../../components/Option";
+// import UiInput from "../../components/Input";
+// import UiButton from "../../components/Button";
+// import Form from "../../components/Form";
+// import Option from "../../components/Option";
 
-// images
-import google from "../../assets/google.png";
-import twitter from "../../assets/twitter.png";
-import logo from "../../assets/logo.png";
+// // images
+// import google from "../../assets/google.png";
+// import twitter from "../../assets/twitter.png";
+// import logo from "../../assets/logo.png";
 
 export default function SignIn() {
   const { loginWithRedirect } = useAuth0();
@@ -29,22 +29,21 @@ export default function SignIn() {
     loginWithRedirect();
   }, []);
 
-  console.log();
-  const [userData, setUserData] = useState({
-    email: "",
-    password: "",
-  });
-  const { email, password } = userData;
-  const onChangeHandler = (e) => {
-    setUserData({
-      ...userData,
-      [e.target.name]: e.target.value,
-    });
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(userData);
-  };
+  // const [userData, setUserData] = useState({
+  //   email: "",
+  //   password: "",
+  // });
+  // const { email, password } = userData;
+  // const onChangeHandler = (e) => {
+  //   setUserData({
+  //     ...userData,
+  //     [e.target.name]: e.target.value,
+  //   });
+  // };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log(userData);
+  // };
 
   return (
     <Container
