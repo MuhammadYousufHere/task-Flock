@@ -22,7 +22,7 @@ const QR = ({ onNext }) => {
 
   useEffect(() => {
     dispatch(setLoggedIn(user));
-  }, []);
+  }, [dispatch, user]);
   return (
     <Wrapper>
       {timer === 0 ? (

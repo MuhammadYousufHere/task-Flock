@@ -31,6 +31,7 @@ const Success = ({ onConnectAnotherWallet }) => {
           textShadow="2px 1px 3px black"
           onClick={onConnectAnotherWallet}
         />
+
         <Typography sx={styles.hashText}>ccs-ascxx-...Exvs--</Typography>
       </Box>
     </Wrapper>

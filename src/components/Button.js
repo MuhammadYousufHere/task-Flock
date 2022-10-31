@@ -11,12 +11,19 @@ const UiButton = ({
   restProps,
   minWidth = "220px",
   color = "secondary.btnText",
+  hidden,
+  role,
+  testId,
 }) => {
   return (
     <Button
       type={type}
       fullWidth
       variant="contained"
+      title={title}
+      hidden={hidden}
+      role={"button"}
+      testid={testId}
       sx={{
         mt: 3,
         mb: 2,

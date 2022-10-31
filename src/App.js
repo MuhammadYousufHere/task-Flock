@@ -10,6 +10,7 @@ import QR from "./pages/QR/QR";
 import Connected from "./pages/Connect/Connected";
 import { Provider } from "react-redux";
 import { store } from "./features/store";
+import ErrorBoundary from "./components/ErrorBoundary";
 function App() {
   const navigate = useNavigate();
   const handleNext = () => {
@@ -20,20 +21,22 @@ function App() {
   };
   return (
     <Provider store={store}>
-      <div className="">
-        <Routes>
-          <Route path="/" element={<Signin />} />
+      <ErrorBoundary>
+        <div className="">
+          <Routes>
+            <Route path="/" element={<Signin />} />
 
-          <Route path="/connect" element={<QR onNext={handleNext} />} />
-          <Route
-            path="/success"
-            element={
-              <Success onConnectAnotherWallet={connectAnotherWallethandler} />
-            }
-          />
-          <Route path="/connected" element={<Connected />} />
-        </Routes>
-      </div>
+            <Route path="/connect" element={<QR onNext={handleNext} />} />
+            <Route
+              path="/success"
+              element={
+                <Success onConnectAnotherWallet={connectAnotherWallethandler} />
+              }
+            />
+            <Route path="/connected" element={<Connected />} />
+          </Routes>
+        </div>
+      </ErrorBoundary>
     </Provider>
   );
 }
