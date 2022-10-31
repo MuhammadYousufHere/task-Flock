@@ -12,6 +12,7 @@ import { Provider } from "react-redux";
 import { store } from "./features/store";
 import ErrorBoundary from "./components/ErrorBoundary";
 function App() {
+  // https://endearing-gnome-64c9c1.netlify.app/
   const navigate = useNavigate();
   const handleNext = () => {
     navigate("/success");

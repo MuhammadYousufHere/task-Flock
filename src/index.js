@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { Auth0Provider } from "@auth0/auth0-react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { BrowserRouter as Router } from "react-router-dom";
-import ErrorBoundary from "./components/ErrorBoundary";
+
 const theme = createTheme({
   palette: {
     primary: {

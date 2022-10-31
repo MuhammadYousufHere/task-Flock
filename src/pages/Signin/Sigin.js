@@ -27,7 +27,7 @@ export default function SignIn() {
 
   useEffect(() => {
     loginWithRedirect();
-  }, []);
+  }, [loginWithRedirect]);
 
   // const [userData, setUserData] = useState({
   //   email: "",
