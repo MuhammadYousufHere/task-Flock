@@ -1,7 +1,6 @@
 import { Box, Typography, Avatar } from "@mui/material";
 
 import logo from "../../assets/logo.png";
-import Spinner from "../../components/Spinner";
 import LoaderGrad from "../../components/SpinnerGrad";
 import Wrapper from "../../components/Wrapper";
 import { styles } from "./style";
