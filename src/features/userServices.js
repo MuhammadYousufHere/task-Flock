@@ -1,5 +1,5 @@
 import axios from "axios";
-const API_URL = "https://flock-test.herokuapp.com/api/user";
+const API_URL = "https://flock-test.herokuapp.com/api/users/";
 
 const getCurrentProfile = async () => {
   try {
@@ -12,9 +12,12 @@ const getCurrentProfile = async () => {
     return { msg, msgStatus };
   }
 };
-const registerProfile = async (user) => {
+const postUser = async (user) => {
   try {
-    await axios.post(API_URL, {});
+    const res = await axios.post(API_URL, user, { headers: {} });
+    if (res.status === 200) {
+      return res.data;
+    }
   } catch (error) {
     const msg = error.response.data;
     const msgStatus = error.response.status;
@@ -24,8 +27,7 @@ const registerProfile = async (user) => {
 };
 const editUser = async (userId) => {
   try {
-    await axios.put(API_URL, { headers: {} });
-    return res.data;
+    await axios.put(API_URL + `:${userId}`, { headers: {} });
   } catch (error) {
     const msg = error.response.data;
     const msgStatus = error.response.status;
@@ -36,6 +38,8 @@ const editUser = async (userId) => {
 
 const deleteUser = async (userId) => {
   try {
+    const res = await axios.delete(API_URL + `:${userId}`, { headers: {} });
+    return res.data;
   } catch (error) {
     const msg = error.response.data;
     const msgStatus = error.response.status;
@@ -47,5 +51,5 @@ export const userService = {
   getCurrentProfile,
   editUser,
   deleteUser,
-  registerProfile,
+  postUser,
 };

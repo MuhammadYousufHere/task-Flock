@@ -14,31 +14,18 @@ import { store } from "./features/store";
 import ErrorBoundary from "./components/ErrorBoundary";
 import PrivateRoute from "./routes/PrivateRoute";
 function App() {
-  // https://endearing-gnome-64c9c1.netlify.app/
-  const navigate = useNavigate();
-  const handleNext = () => {
-    navigate("/success");
-  };
-  const connectAnotherWallethandler = () => {
-    navigate("/connected");
-  };
+  // https://serene-pasca-c2fc83.netlify.app/
+
   return (
     <Provider store={store}>
       <ErrorBoundary>
         <div className="">
           <Routes>
-            {/* <Route path="/" element={<Signin />} /> */}
-            <Route path="/" element={<div>Home</div>} />
+            <Route path="/" element={<Signin />} />
+
             <Route element={<PrivateRoute />}>
-              <Route path="/connect" element={<QR onNext={handleNext} />} />
-              <Route
-                path="/success"
-                element={
-                  <Success
-                    onConnectAnotherWallet={connectAnotherWallethandler}
-                  />
-                }
-              />
+              <Route path="/connect" element={<QR />} />
+              <Route path="/success" element={<Success />} />
               <Route path="/connected" element={<Connected />} />
             </Route>
           </Routes>

@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import {
   fireEvent,
   render,
@@ -12,13 +13,16 @@ import { store } from "../../../features/store";
 import { act } from "react-dom/test-utils";
 
 afterEach(cleanup);
+
 //
 describe("QR code test cases", () => {
   //
   test("Should render QR Component", function () {
     render(
       <Provider store={store}>
-        <QR />
+        <Router>
+          <QR />
+        </Router>
       </Provider>
     );
 
@@ -30,7 +34,9 @@ describe("QR code test cases", () => {
   test("QR Component should dislay countdown for 1 min", function () {
     render(
       <Provider store={store}>
-        <QR />
+        <Router>
+          <QR />
+        </Router>
       </Provider>
     );
 
@@ -47,17 +53,21 @@ describe("QR code test cases", () => {
     const handleClick = jest.fn();
     render(
       <Provider store={store}>
-        <QR onNext={handleClick} />
+        <Router>
+          <QR onNext={handleClick} />
+        </Router>
       </Provider>
     );
     fireEvent.click(screen.getByAltText("logo"));
-    expect(handleClick).toHaveBeenCalledTimes(1);
+    expect(handleClick).toHaveBeenCalledTimes(0);
   });
 
   test("Redirect to Success pages after 1 min", async function () {
     render(
       <Provider store={store}>
-        <QR />
+        <Router>
+          <QR />
+        </Router>
       </Provider>
     );
 

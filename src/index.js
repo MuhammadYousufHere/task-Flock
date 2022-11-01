@@ -26,15 +26,15 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      {/* <Auth0Provider
-        domain='myauth-app.us.auth0.com'
-        clientId='Z7JhV58WgZvpNMo77WFuUa1LKR0iMVIo'
-        redirectUri={window.location.origin + '/connect'}
-      > */}
-      <Router>
-        <App />
-      </Router>
-      {/* </Auth0Provider> */}
+      <Auth0Provider
+        domain="myauth-app.us.auth0.com"
+        clientId="Z7JhV58WgZvpNMo77WFuUa1LKR0iMVIo"
+        redirectUri={window.location.origin + "/connect"}
+      >
+        <Router>
+          <App />
+        </Router>
+      </Auth0Provider>
     </ThemeProvider>
   </React.StrictMode>
 );

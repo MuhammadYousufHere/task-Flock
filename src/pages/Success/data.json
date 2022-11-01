@@ -1,0 +1,25 @@
+ [
+  {
+	"uuid": "5d6a83d0-57a7-11ed-9e2f-e530ce428fef",
+	"auth0Id": "auth|301591w",
+	"walletAddresses": [
+		"0xw",
+		" 0x2"
+	],
+	"hasProof": true,
+	"hasMoonbird": true,
+	"username": "User w",
+	"hostRating": 5,
+	"profileImageUrl": null,
+	"location": {
+		"latitude": 12.121,
+		"longitude": 12.121
+	},
+	"deviceToken": null,
+	"notificationPreferences": {
+		"minHostRating": 4,
+		"minPossibleAttendees": 2,
+		"distanceFromPossibleAttendees": 15
+	}
+}
+ ]
