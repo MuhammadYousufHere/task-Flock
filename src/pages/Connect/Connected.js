@@ -7,12 +7,12 @@ import UiButton from "../../components/Button";
 import { styles } from "./style";
 import Wrapper from "../../components/Wrapper";
 
-const Connected = () => {
+const Connected = ({ onClick }) => {
   const [loading, setLoading] = React.useState(true);
   React.useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
+    // setTimeout(() => {
+    setLoading(false);
+    // }, 2000);
   }, []);
 
   if (loading) return <Loader />;
@@ -28,6 +28,7 @@ const Connected = () => {
           title="Connect this account instead"
           width={"30%"}
           minWidth="270px"
+          onClick={onClick}
         />
       </Box>
     </Wrapper>

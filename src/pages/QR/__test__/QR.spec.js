@@ -1,10 +1,18 @@
 import React from "react";
-import { fireEvent, render, screen } from "@testing-library/react";
+import {
+  fireEvent,
+  render,
+  screen,
+  cleanup,
+  waitFor,
+} from "@testing-library/react";
 import QR from "../QR";
 import { Provider } from "react-redux";
 import { store } from "../../../features/store";
 import { act } from "react-dom/test-utils";
 
+afterEach(cleanup);
+//
 describe("QR code test cases", () => {
   //
   test("Should render QR Component", function () {
@@ -18,6 +26,7 @@ describe("QR code test cases", () => {
   });
   //
   jest.spyOn(global, "setTimeout");
+
   test("QR Component should dislay countdown for 1 min", function () {
     render(
       <Provider store={store}>
@@ -45,5 +54,19 @@ describe("QR code test cases", () => {
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
-  // test("User should be redirected to Success Connected", function () {});
+  test("Redirect to Success pages after 1 min", async function () {
+    render(
+      <Provider store={store}>
+        <QR />
+      </Provider>
+    );
+
+    await waitFor(() => {
+      //   expect(screen.getByText(/wallet(s) connected/i)).toBeInTheDocument(),
+      // { timeout: 5000 }
+    });
+    // expect(window.location.pathname).toBe("/success");
+    // expect(setTimeout).toHaveBeenCalledTimes(1);
+    // expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 1000);
+  });
 });

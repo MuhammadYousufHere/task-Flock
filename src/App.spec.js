@@ -40,4 +40,10 @@ describe("App", () => {
       ReactDOM.createRoot(container).render(<Auth0Provider />);
     });
   });
+  //
+  it("renders the signin page", () => {
+    act(() => {
+      ReactDOM.createRoot(container).render(<Auth0Provider />);
+    });
+  });
 });
