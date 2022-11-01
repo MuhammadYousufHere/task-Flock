@@ -1,5 +1,11 @@
 import React, { Component } from "react";
 
+const styles = {
+  display: "flex",
+  textAlign: "center",
+  justifyContent: "center",
+  alignItems: "center",
+};
 export default class ErrorBoundary extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +25,11 @@ export default class ErrorBoundary extends Component {
 
   render() {
     if (this.state.hasError) {
-      return <div>Something went wrong!</div>;
+      return (
+        <div style={styles}>
+          <h3>Something went wrong!</h3>
+        </div>
+      );
     }
     return this.props.children;
   }

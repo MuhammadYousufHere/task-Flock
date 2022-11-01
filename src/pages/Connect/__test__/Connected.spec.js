@@ -17,19 +17,21 @@ jest.spyOn(global, "setTimeout");
 jest.setTimeout(8000);
 //
 describe("Connected test cases", () => {
-  //
-  it("should render Connected Component", async function () {
+  // Render test case
+  it("should render Connected Component", function () {
     render(
       <Provider store={store}>
         <Connected />
       </Provider>
     );
-    await waitFor(() => expect(screen.getByRole("button")).toBeInTheDocument());
+    expect(screen.getByRole("button")).toBeInTheDocument();
     expect(
       screen.getByText(/already connected to an account/i)
     ).toBeInTheDocument();
     expect(screen.getByAltText("logo")).toBeInTheDocument();
   });
+
+  //Click case
   test("User should be able click button", async function () {
     const handler = jest.fn();
 

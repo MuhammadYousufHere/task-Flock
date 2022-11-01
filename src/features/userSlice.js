@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
-const API_URL = "";
+import { userService } from "./userServices";
 
 const initialState = {
   isLoggedIn: false,
@@ -10,7 +9,7 @@ const initialState = {
   success: false,
 };
 export const getCurrentUser = createAsyncThunk("user", async () => {
-  return await getCurrentProfile();
+  return await userService.getCurrentProfile();
 });
 const userSlice = createSlice({
   name: "User",
